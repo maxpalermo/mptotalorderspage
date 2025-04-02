@@ -17,9 +17,12 @@
 
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", (e) => {
-        const orderGridPanel = document.getElementById("order_grid_panel");
-        const header = orderGridPanel.querySelector(".card-header");
         const totalOrdersBadge = document.getElementById("total-orders-badge");
+        const orderGridPanel = document.getElementById("order_grid_panel");
+        if (!orderGridPanel) {
+            return;
+        }
+        const header = orderGridPanel.querySelector(".card-header");
 
         if (!header || !totalOrdersBadge) {
             return;
